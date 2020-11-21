@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.wordpress
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ annotation-api, app-name, aws-lambda, aws-lambda-custom-runtime, data, data-jpa, graalvm, java, jdbc-hikari, junit, logback, maven, postgres, readme, shade, testcontainers, yaml ]
