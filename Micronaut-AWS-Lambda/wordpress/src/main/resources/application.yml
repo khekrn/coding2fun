@@ -1,0 +1,14 @@
+micronaut:
+  application:
+    name: wordpress
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    dialect: POSTGRES
+    maximum-pool-size: 1
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+hibernate.enable_lazy_load_no_trans: true
+
