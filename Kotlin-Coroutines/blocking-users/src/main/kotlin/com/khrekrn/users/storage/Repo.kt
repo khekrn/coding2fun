@@ -6,21 +6,24 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
-@Table(name = "user", schema = "public")
-data class User(
+@Table(name = "user")
+open class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = null,
+    open var id: Long? = null
 
-    var name: String?,
+    open var name: String? = null
 
     @Column(name = "email_id")
-    var emailId: String?,
+    open var emailId: String? = null
 
-    var createdAt: LocalDateTime? = LocalDateTime.now()
+    open var avatar: String? = null
 
-)
+    open var createdAt: LocalDateTime? = null
+
+    open var updatedAt: LocalDateTime? = LocalDateTime.now()
+}
 
 @Repository
 interface UserRepo : CrudRepository<User, Long> {

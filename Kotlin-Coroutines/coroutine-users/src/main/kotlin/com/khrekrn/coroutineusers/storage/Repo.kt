@@ -18,7 +18,11 @@ data class User(
     @Column("email_id")
     var emailId: String?,
 
-    var createdAt: LocalDateTime? = LocalDateTime.now()
+    var avatar: String? = null,
+
+    var createdAt: LocalDateTime? = null,
+
+    var updatedAt: LocalDateTime? = LocalDateTime.now()
 
 )
 
