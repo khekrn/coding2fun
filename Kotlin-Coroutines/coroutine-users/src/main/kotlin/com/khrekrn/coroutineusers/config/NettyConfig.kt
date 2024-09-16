@@ -1,6 +1,7 @@
 import io.netty.channel.ChannelOption
 import io.netty.channel.epoll.Epoll
 import io.netty.channel.epoll.EpollChannelOption
+import io.netty.channel.epoll.EpollMode
 import io.netty.channel.kqueue.KQueue
 import io.netty.channel.unix.UnixChannelOption
 import org.slf4j.LoggerFactory
@@ -49,6 +50,9 @@ class NettyConfig : WebServerFactoryCustomizer<NettyReactiveWebServerFactory> {
                 config.setOption(EpollChannelOption.TCP_KEEPINTVL, 60)
                 config.setOption(EpollChannelOption.TCP_KEEPCNT, 8)
                 config.setOption(EpollChannelOption.SO_REUSEPORT, true)
+                config.setOption(EpollChannelOption.EPOLL_MODE, EpollMode.EDGE_TRIGGERED)
+                config.setOption(ChannelOption.SO_LINGER, 0)
+                config.setOption(ChannelOption.TCP_NODELAY, true)
             }
 
             isMac() -> {
